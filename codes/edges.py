@@ -13,7 +13,8 @@ for col in i_df.columns:
         uniprot = i_df['uniprot'].to_numpy()
         edges['object_id'] = ['UNIPROTKB ' + str(v) for v in uniprot]
     elif col == 'pubchem_cid':
-        edges['subject_id'] = i_df['pubchem_cid'].to_numpy()
+        pubchemid = i_df['pubchem_cid'].to_numpy(dtype=int)
+        edges['subject_id'] = ['PUBCHEM_CID ' + str(v) for v in pubchemid]
     elif col == 'act_type':
         edges['evidence_class'] = i_df['act_type'].to_numpy()
     else:

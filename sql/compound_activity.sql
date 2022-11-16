@@ -23,7 +23,9 @@ JOIN
 JOIN
 	protein p ON p.id = t2tc.protein_id
 WHERE
-	ca.act_value IS NOT NULL
+	ca.act_value IS NOT NULL AND
+	ca.cmpd_pubchem_cid IS NOT NULL AND
+	p.uniprot IS NOT NULL
 ORDER BY
 	t.id,
 	ca.cmpd_pubchem_cid

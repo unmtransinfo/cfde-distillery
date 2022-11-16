@@ -44,7 +44,7 @@ cnodes = {'node_id': [], 'node_namespace': [], 'node_label': [], 'node_definitio
 print("create a dictionary using compound activity file")
 for col in i_df.columns:
     if col == 'pubchem_cid':
-        pubchemid = i_df['pubchem_cid'].to_numpy()
+        pubchemid = i_df['pubchem_cid'].to_numpy(dtype=int)
         cnodes['node_id'] = ['PUBCHEM_CID ' + str(v) for v in pubchemid]
     elif col == 'compound_name':
         cnodes['node_label'] = i_df['compound_name'].to_numpy()
