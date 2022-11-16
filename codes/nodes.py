@@ -34,6 +34,7 @@ pnodes['units'] = ['' for i in range(i_df.shape[0])]
 # write to an output dataframe
 print('write data to output protein dataframe')
 o_df = pd.DataFrame(pnodes)
+o_df = o_df.drop_duplicates()
 o_df.to_csv("../data/pnodes.tsv", sep="\t", index=False)
 
 # ******* Compound nodes ******#
@@ -64,4 +65,5 @@ cnodes['units'] = ['' for i in range(i_df.shape[0])]
 # write to an output dataframe
 print('write data to output compound dataframe')
 o_df = pd.DataFrame(cnodes)
+o_df = o_df.drop_duplicates()
 o_df.to_csv("../data/cnodes.tsv", sep="\t", index=False)
