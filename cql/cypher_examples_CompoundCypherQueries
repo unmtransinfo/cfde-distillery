@@ -1,0 +1,14 @@
+// Count the number of relationships for a particular Compound node where the node_definition is specified via SMILES: 'NOCC(=O)O' (note: this is for Aminooxyacetic acid)
+
+MATCH (c:Compound)-[r:RELATED_TO]-(p:Protein) WHERE c.node_definition='NOCC(=O)O' RETURN COUNT(r)
+
+
+// Output the relationships for a particular Compound node where the node_label is specified as 'Aminooxyacetic acid'
+
+MATCH (c:Compound)-[r:RELATED_TO]-(p:Protein) WHERE c.node_label='Aminooxyacetic acid' RETURN r
+
+
+// Count the number of relationships for Compound nodes where the node_namespace is 'IDG' (should be ~454k)
+
+MATCH (c:Compound)-[r:RELATED_TO]-(p:Protein) WHERE c.node_namespace='IDG' RETURN COUNT(r)
+
