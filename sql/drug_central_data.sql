@@ -1,4 +1,4 @@
--
+- fetch data from DrugCentral database for "concept" node and "RELATED_TO" relationship
 
 SELECT DISTINCT
   omop.concept_id omop_concept_id,
