@@ -163,10 +163,10 @@ def populate_compound_nodes(ifile, ofile, drugbank_file=None):
 
 # start of the code
 # input output files
-inpfile = "/home/praveen/Documents/work/cfde-distillery_data/compound_activity.tsv"
-compound_outfile = "/home/praveen/Documents/work/cfde-distillery_data/compound_nodes.tsv"
-protein_outfile = "/home/praveen/Documents/work/cfde-distillery_data/protein_nodes.tsv"
-dbid_file = "/home/praveen/Documents/work/cfde-distillery_data/drugbank_id.pkl"
+inpfile = "compound_activity.tsv"
+compound_outfile = "compound_nodes.tsv"
+protein_outfile = "protein_nodes.tsv"
+dbid_file = "drugbank_id.pkl"
 
 # compound nodes
 populate_compound_nodes(inpfile, compound_outfile, drugbank_file=dbid_file)
