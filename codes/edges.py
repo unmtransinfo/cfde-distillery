@@ -35,6 +35,6 @@ def populate_edges_data(ifile, ofile):
 
 
 # start of the code
-inpfile = "/home/praveen/Documents/work/cfde-distillery_data/compound_activity.tsv"
-outfile = "/home/praveen/Documents/work/cfde-distillery_data/bioactivity_edges.tsv"
+inpfile = "compound_activity.tsv"
+outfile = "bioactivity_edges.tsv"
 populate_edges_data(inpfile, outfile)
