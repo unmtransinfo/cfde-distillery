@@ -43,6 +43,6 @@ def populate_drugcentral_nodes(ifile, ofile):
 
 
 # start of the code
-inpfile = "/home/praveen/Documents/work/cfde-distillery_data/drug_disease.csv"
-outfile = "/home/praveen/Documents/work/cfde-distillery_data/disease_nodes.tsv"
+inpfile = "drug_disease.csv"
+outfile = "disease_nodes.tsv"
 populate_drugcentral_nodes(inpfile, outfile)
