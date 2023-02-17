@@ -57,8 +57,8 @@ def extract_drugbank_id_from_pubchem(pubchem_cid, ofile):
 
 # start of the code
 # input output files
-inpfile = "/home/praveen/Documents/work/cfde-distillery_data/compound_activity.tsv"
-dbid_file = "/home/praveen/Documents/work/cfde-distillery_data/drugbank_id.pkl"
+inpfile = "compound_activity.tsv"
+dbid_file = "drugbank_id.pkl"
 
 print("fetch drugbank id for pubchem ids")
 i_df = pd.read_csv(inpfile, sep="\t")
