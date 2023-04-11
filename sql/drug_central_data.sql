@@ -3,11 +3,10 @@
 SELECT DISTINCT
   omop.concept_id omop_concept_id,
   omop.concept_name omop_concept_name,
-  omop.umls_cui,
+  omop.snomed_conceptid, 
   ids.identifier pubchem_cid,
   s.id drug_id,
-  s.name drug_name,
-  s.mrdef
+  s.name drug_name
 FROM
   omop_relationship omop
 JOIN
@@ -17,4 +16,4 @@ JOIN
 WHERE
   ids.id_type = 'PUBCHEM_CID'
   AND omop.relationship_name = 'indication'
-  AND omop.umls_cui IS NOT NULL
+  AND omop.snomed_conceptid IS NOT null
