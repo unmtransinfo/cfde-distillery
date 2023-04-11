@@ -15,9 +15,9 @@ def populate_drugcentral_nodes(ifile, ofile):
 
     print("create a dictionary using compound activity file")
     for col in i_df.columns:
-        if col == 'umls_cui':
-            uniprot = i_df['umls_cui'].to_numpy()
-            pnodes['node_id'] = ['UMLS ' + str(v) for v in uniprot]
+        if col == 'snomed_conceptid':
+            snomed_id = i_df['snomed_conceptid'].to_numpy()
+            pnodes['node_id'] = ['SNOMEDCT_US ' + str(v) for v in snomed_id]
         elif col == 'omop_concept_name':
             pnodes['node_label'] = i_df['omop_concept_name'].to_numpy()
         elif col == 'omop_concept_id':
@@ -43,6 +43,6 @@ def populate_drugcentral_nodes(ifile, ofile):
 
 
 # start of the code
-inpfile = "drug_disease.csv"
-outfile = "disease_nodes.tsv"
+inpfile = "/home/praveen/Documents/work/cfde-distillery_data/drug_disease_input.tsv"
+outfile = "/home/praveen/Documents/work/cfde-distillery_data/nodes_disease.tsv"
 populate_drugcentral_nodes(inpfile, outfile)

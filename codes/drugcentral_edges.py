@@ -15,9 +15,9 @@ def populate_edges_data(ifile, ofile):
 
     print("create a dictionary using compound activity file")
     for col in i_df.columns:
-        if col == 'umls_cui':
-            uniprot = i_df['umls_cui'].to_numpy()
-            edges['object_id'] = ['UMLS ' + str(v) for v in uniprot]
+        if col == 'snomed_conceptid':
+            snomed_id = i_df['snomed_conceptid'].to_numpy()
+            edges['object_id'] = ['SNOMEDCT_US ' + str(v) for v in snomed_id]
         elif col == 'pubchem_cid':
             pubchemid = i_df['pubchem_cid'].to_numpy(dtype=int)
             edges['subject_id'] = ['PUBCHEM_CID ' + str(v) for v in pubchemid]
@@ -35,6 +35,6 @@ def populate_edges_data(ifile, ofile):
 
 
 # start of the code
-inpfile = "drug_disease.csv"
-outfile = "indication_edges.tsv"
+inpfile = "/home/praveen/Documents/work/cfde-distillery_data/drug_disease_input.tsv"
+outfile = "/home/praveen/Documents/work/cfde-distillery_data/edges_indication_compound_disease.tsv"
 populate_edges_data(inpfile, outfile)
