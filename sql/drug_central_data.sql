@@ -6,7 +6,8 @@ SELECT DISTINCT
   omop.snomed_conceptid, 
   ids.identifier pubchem_cid,
   s.id drug_id,
-  s.name drug_name
+  s.name drug_name,
+  s.smiles 
 FROM
   omop_relationship omop
 JOIN
