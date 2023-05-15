@@ -118,7 +118,13 @@ class DistilleryNodesEdges:
                 cnodes['node_id'] = ['PUBCHEM_CID ' + str(v) for v in pubchemid]
             elif col == 'compound_name':
                 pubchemid = i1_df['pubchem_cid'].to_numpy(dtype=int)
-                cnodes['node_label'] = [dbid_dict[p]['names'] for p in pubchemid]
+                n_labels = []
+                for p in pubchemid:
+                    if "|" in dbid_dict[p]['names']:
+                        n_labels.append(dbid_dict[p]['names'].split("|")[0])
+                    else:
+                        n_labels.append(dbid_dict[p]['names'])
+                cnodes['node_label'] = n_labels
             elif col == 'smiles':
                 cnodes['node_definition'] = list(i1_df['smiles'])
             else:
@@ -126,7 +132,7 @@ class DistilleryNodesEdges:
 
         # these cols are not in the dataframe
         cnodes['node_namespace'] = ['IDG'] * i1_df.shape[0]
-        cnodes['node_synonyms'] = ['' for i in range(i1_df.shape[0])]
+        cnodes['node_synonyms'] = [dbid_dict[p]['names'] for p in pubchemid]
         cnodes['node_dbxrefs'] = [dbid_dict[p]['DrugBank'] for p in pubchemid]
         cnodes['value'] = ['' for i in range(i1_df.shape[0])]
         cnodes['lowerbound'] = ['' for i in range(i1_df.shape[0])]
@@ -146,7 +152,7 @@ class DistilleryNodesEdges:
             else:
                 pid = 'PUBCHEM_CID ' + str(p)
                 cnodes['node_id'].append(pid)
-                cnodes['node_label'].append(dbid_dict[p]['names'])
+                cnodes['node_label'].append(dbid_dict[p]['names'].strip("|")[0])
                 cnodes['node_definition'].append(i2_df.iloc[i]['smiles'])
                 cnodes['node_namespace'].append('IDG')
                 cnodes['node_synonyms'].append('')

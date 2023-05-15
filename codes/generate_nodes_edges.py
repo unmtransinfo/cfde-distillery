@@ -9,24 +9,24 @@ def validate_nodes_edges_data(p_nodes_file, c_nodes_file, d_nodes_file, cd_edge_
     """
     MISSING_DATA = False
     # protein nodes
-    p_df = pd.read_csv(p_nodes_file, sep="\t", header=0)
+    p_df = pd.read_csv(p_nodes_file, sep="\t", header=0, dtype=str)
     n_uniprot_ids = set(p_df['node_id'].to_numpy())
 
     # compound nodes
-    c_df = pd.read_csv(c_nodes_file, sep="\t", header=0)
+    c_df = pd.read_csv(c_nodes_file, sep="\t", header=0, dtype=str)
     n_pubchem_ids = set(c_df['node_id'].to_numpy())
 
     # disease nodes
-    d_df = pd.read_csv(d_nodes_file, sep="\t", header=0)
+    d_df = pd.read_csv(d_nodes_file, sep="\t", header=0, dtype=str)
     n_snomed_ids = set(d_df['node_id'].to_numpy())
 
     # compound disease edges
-    cd_df = pd.read_csv(cd_edge_file, sep="\t", header=0)
+    cd_df = pd.read_csv(cd_edge_file, sep="\t", header=0, dtype=str)
     e_snomed_ids = set(cd_df['object_id'].to_numpy())
     e1_pubchem_ids = set(cd_df['subject_id'].to_numpy())
 
     # compound protein edges
-    cp_df = pd.read_csv(cp_edge_file, sep="\t", header=0)
+    cp_df = pd.read_csv(cp_edge_file, sep="\t", header=0, dtype=str)
     e_uniprot_ids = set(cp_df['object_id'].to_numpy())
     e2_pubchem_ids = set(cp_df['subject_id'].to_numpy())
 
@@ -85,7 +85,7 @@ def main():
     # If a node is present (uniprot, pubchem, snomed) in the edge file, it MUST be     #
     # present in the node file(s)                                                      #
     # *********************************************************************************#
-    print("Validate data in edges and nodes files")
+    print("\nValidate data in edges and nodes files")
     missing_info = validate_nodes_edges_data(p_nodes_file, c_nodes_file, d_nodes_file, cd_edge_file, cp_edge_file)
     if missing_info:
         print("FAIL - Nodes files do not have all nodes")
