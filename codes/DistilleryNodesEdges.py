@@ -152,10 +152,13 @@ class DistilleryNodesEdges:
             else:
                 pid = 'PUBCHEM_CID ' + str(p)
                 cnodes['node_id'].append(pid)
-                cnodes['node_label'].append(dbid_dict[p]['names'].strip("|")[0])
+                if "|" in dbid_dict[p]['names']:
+                    cnodes['node_label'].append(dbid_dict[p]['names'].split("|")[0])
+                else:
+                    cnodes['node_label'].append(dbid_dict[p]['names'])
                 cnodes['node_definition'].append(i2_df.iloc[i]['smiles'])
                 cnodes['node_namespace'].append('IDG')
-                cnodes['node_synonyms'].append('')
+                cnodes['node_synonyms'].append(dbid_dict[p]['names'])
                 cnodes['node_dbxrefs'].append(dbid_dict[p]['DrugBank'])
                 cnodes['value'].append('')
                 cnodes['lowerbound'].append('')
