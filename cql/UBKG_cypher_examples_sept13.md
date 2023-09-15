@@ -16,7 +16,7 @@ CONTAINS 'diabetes'
 RETURN * ;
 ````
 
-<h2>// Listing compounds related to IDG terms containing the string “diabetes”:</h2>
+<h2>Listing compounds related to IDG terms containing the string “diabetes”:</h2>
 
 ````
 MATCH (c_term:Term)-[:PREF_TERM]-(c_concept:Concept)-[:indication {SAB: 'IDGD'}]-(d_concept:Concept)-[:PREF_TERM]-(d_term:Term)
@@ -25,7 +25,7 @@ RETURN toLower(c_term.name) as Name
 ORDER BY Name
 ````
 
-<h2>// Showing compounds and proteins (using SAB: IDG-P) related by bioactivity where the protein name contains the string “Cytochrome P450”:</h2>
+<h2>Showing compounds and proteins (using SAB: IDG-P) related by bioactivity where the protein name contains the string “Cytochrome P450”:</h2>
 
 ````
 MATCH (c_term:Term)-[:PREF_TERM]-(c_concept:Concept)-[:bioactivity {SAB: 'IDGP'}]-(p_concept:Concept)-[:PREF_TERM]-(p_term:Term)
