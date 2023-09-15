@@ -1,8 +1,7 @@
-//
-// NOTE: these example queries were each executed successfully on the UBKG instance first loaded on chiltepin September 13, 2023
-//
 
-// Showing the IDGD (IDG-Disease) mapping between PUBCHEM and SNOMEDUS_CT:
+<strong><h1>NOTE: these example queries were each executed successfully on the UBKG instance first loaded on chiltepin September 13, 2023</h1></strong>
+
+<h2>// Showing the IDGD (IDG-Disease) mapping between PUBCHEM and SNOMEDUS_CT:</h2>
 
 ````
 MATCH (pubchem_code:Code {SAB:'PUBCHEM'})-[:CODE]-(pubchem_cui:Concept)-[:indication {SAB:'IDGD'}]-(snomed_cui:Concept)-[:CODE]-(snomed_code:Code {SAB:"SNOMEDCT_US"})
