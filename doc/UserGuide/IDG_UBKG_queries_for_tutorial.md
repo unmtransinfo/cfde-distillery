@@ -42,5 +42,8 @@ MATCH (c_term:Term)-[:PREF_TERM]-(c_concept:Concept)-[:bioactivity {SAB: 'IDGP'}
 WHERE p_term.name CONTAINS "Cytochrome P450"
 RETURN *
 ```
+
+Neo4j screenshot of query results:
+
 <img src="https://github.com/unmtransinfo/cfde-distillery/blob/main/doc/UserGuide/images/1d.png?raw=true" width="100%">
 
