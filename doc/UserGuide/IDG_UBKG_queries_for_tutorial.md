@@ -55,6 +55,7 @@ MATCH p=(tissue_code:Code {SAB:"GTEXEXP"})<-[:CODE]-(tissue_concept:Concept)-[r:
 WITH gene_code.CodeID as genes, COUNT(tissue_code.CodeID) as tissue_count, toInteger(COUNT(p) * 0.25) as top25Percent
 ORDER BY tissue_count DESC
 RETURN genes, tissue_count LIMIT 10
+```
 
 Neo4j screenshot of query results:
 <img src="https://github.com/unmtransinfo/cfde-distillery/blob/main/doc/UserGuide/images/2a.png?raw=true" width="100%">
