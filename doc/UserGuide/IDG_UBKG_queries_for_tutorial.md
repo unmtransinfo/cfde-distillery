@@ -47,3 +47,17 @@ Neo4j screenshot of query results:
 
 <img src="https://github.com/unmtransinfo/cfde-distillery/blob/main/doc/UserGuide/images/1d.png?raw=true" width="100%">
 
+<strong>Example 2: IDG use-case which combines our IDG dataset with both LINCS and GTEx</strong><br /><br />
+<strong>Example 2a:</strong> Find the top 25% genes that are highly expressed in the GTEx dataset using HGNC for gene annotations.
+
+```cypher 
+MATCH p=(tissue_code:Code {SAB:"GTEXEXP"})<-[:CODE]-(tissue_concept:Concept)-[r:expressed_in {SAB:"GTEXEXP"}]-(gene_concept:Concept)-[:CODE]->(gene_code:Code{SAB:'HGNC'})
+WITH gene_code.CodeID as genes, COUNT(tissue_code.CodeID) as tissue_count, toInteger(COUNT(p) * 0.25) as top25Percent
+ORDER BY tissue_count DESC
+RETURN genes, tissue_count LIMIT 10
+
+Neo4j screenshot of query results:
+<img src="https://github.com/unmtransinfo/cfde-distillery/blob/main/doc/UserGuide/images/2a.png?raw=true" width="100%">
+
+
+
