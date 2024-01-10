@@ -7,7 +7,7 @@ Example 1a: Showing the IDGD (IDG-Disease) mapping between PUBCHEM and SNOMEDUS_
 MATCH (pubchem_code:Code {SAB:'PUBCHEM'})-[:CODE]-(pubchem_cui:Concept)-[:indication {SAB:'IDGD'}]-(snomed_cui:Concept)-[:CODE]-(snomed_code:Code {SAB:"SNOMEDCT_US"})
 RETURN * LIMIT 10
 ```
-<img src="https://github.com/unmtransinfo/cfde-distillery/blob/main/doc/UserGuide/images/1a.png?raw=true" width="750">
+<img src="https://github.com/unmtransinfo/cfde-distillery/blob/main/doc/UserGuide/images/1a.png?raw=true" width="100%" align="center">
 
 Example 1b: Showing the results for disease terms containing the string “diabetes” and linked via the IDG-DrugCentral indication relationship:
 
