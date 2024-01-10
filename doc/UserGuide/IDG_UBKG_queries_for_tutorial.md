@@ -91,6 +91,7 @@ MATCH gr=(tissue_concept)-[r2:expressed_in {SAB:"GTEXEXP"}]-(gene_concept)-[r3 {
 WHERE gene_code.CodeID IN selectedGenes
 RETURN gr LIMIT 5
 ```
+Neo4j screenshot of query results:
 
 <img src="https://github.com/unmtransinfo/cfde-distillery/blob/main/doc/UserGuide/images/2b_2.png?raw=true" width="100%">
 
