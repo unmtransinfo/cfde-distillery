@@ -1,6 +1,6 @@
 ### <ins>Illuminating the Druggable Genome (IDG)</ins>
 
-<strong>Example 1: Introduction to IDG queries within UBKG</strong><br />
+<strong>Example 1: Introduction to IDG queries within UBKG</strong><br /><br />
 <strong>Example 1a:</strong> Showing the IDGD (IDG-Disease) mapping between PUBCHEM and SNOMEDUS_CT:
 
 ```cypher 
