@@ -60,5 +60,39 @@ RETURN genes, tissue_count LIMIT 10
 Neo4j screenshot of query results:
 <img src="https://github.com/unmtransinfo/cfde-distillery/blob/main/doc/UserGuide/images/2a.png?raw=true" width="100%">
 
+<strong>Example 2b:</strong> Continuing from example 2a (where we found all genes in UBKG that are highly expressed in the GTEx dataset), we next focus on those genes which may be perturbed by a specific PubChem compound. This multi-DCC query relies on data from both the LINCS L1000 dataset and known drug targets found in data curated by IDG-DrugCentral. The first query below shows the result when all genes are considered: 
+
+```cypher 
+MATCH (tissue_concept:Concept)-[:CODE]->(tissue_code:Code {SAB:"GTEXEXP"})
+MATCH (gene_concept:Concept)-[:CODE]->(gene_code:Code {SAB:HGNC'})
+MATCH (pubchem_concept:Concept)-[:CODE]->(pubchem_code:Code {SAB:'PUBCHEM'})
+MATCH (protein_concept:Concept)-[:CODE]->(protein_code:Code {SAB:"UNIPROTKB"})
+MATCH (tissue_concept)-[r1:expressed_in {SAB:"GTEXEXP"}]-(gene_concept)-[r2 {SAB:LINCS'}]-(pubchem_concept)-[r3:bioactivity {SAB:'IDGP'}]-(protein_concept)
+RETURN * LIMIT 5
+```
+
+Neo4j screenshot of query results:
+
+<img src="https://github.com/unmtransinfo/cfde-distillery/blob/main/doc/UserGuide/images/2b_1.png?raw=true" width="100%">
+
+And considering only the top 25% of genes:
+
+```cypher 
+MATCH p=(tissue_code:Code {SAB:"GTEXEXP"})<-[:CODE]-(tissue_concept:Concept)-[r:expressed_in {SAB:"GTEXEXP"}]-(gene_concept:Concept)-[:CODE]->(gene_code:Code{SAB:'HGNC'})
+WITH gene_code.CodeID as genes, COUNT(tissue_code.CodeID) as tissue_count, toInteger(COUNT(p) * 0.25) as top25Percent
+ORDER BY tissue_count DESC
+UNWIND genes[..top25Percent] AS gene_id
+WITH COLLECT(DISTINCT gene_id) as selectedGenes
+MATCH (tissue_concept:Concept)-[:CODE]->(tissue_code:Code {SAB:"GTEXEXP"})
+MATCH (gene_concept:Concept)-[:CODE]->(gene_code:Code {SAB:HGNC'})
+MATCH (pubchem_concept:Concept)-[:CODE]->(pubchem_code:Code {SAB:'PUBCHEM'})
+MATCH (protein_concept:Concept)-[:CODE]->(protein_code:Code {SAB:"UNIPROTKB"})
+MATCH gr=(tissue_concept)-[r2:expressed_in {SAB:"GTEXEXP"}]-(gene_concept)-[r3 {SAB:'LINCS'}]-(pubchem_concept)-[r4:bioactivity {SAB:'IDGP'}]-(protein_concept)
+WHERE gene_code.CodeID IN selectedGenes
+RETURN gr LIMIT 5
+```
+
+<img src="https://github.com/unmtransinfo/cfde-distillery/blob/main/doc/UserGuide/images/2b_2.png?raw=true" width="100%">
+
 
 
