@@ -18,7 +18,7 @@ CONTAINS 'diabetes'
 RETURN * ;
 ```
 Neo4j screenshot of query results:
-<img src="https://github.com/unmtransinfo/cfde-distillery/blob/main/doc/UserGuide/images/1b.png?raw=true" width="750">
+<img src="https://github.com/unmtransinfo/cfde-distillery/blob/main/doc/UserGuide/images/1b.png?raw=true" width="100%">
 
 Example 1c: Listing compounds related to IDG terms containing the string “diabetes”:
 
@@ -29,7 +29,7 @@ RETURN toLower(c_term.name) as Name
 ORDER BY Name
 ```
 Neo4j screenshot of query results:
-<img src="https://github.com/unmtransinfo/cfde-distillery/blob/main/doc/UserGuide/images/1c.png?raw=true" width="750">
+<img src="https://github.com/unmtransinfo/cfde-distillery/blob/main/doc/UserGuide/images/1c.png?raw=true" width="100%">
 
 Example 1d: Showing compounds and proteins (using SAB: IDG-P) related by bioactivity where the protein name contains the string “Cytochrome P450”:
 
@@ -38,5 +38,5 @@ MATCH (c_term:Term)-[:PREF_TERM]-(c_concept:Concept)-[:bioactivity {SAB: 'IDGP'}
 WHERE p_term.name CONTAINS "Cytochrome P450"
 RETURN *
 ```
-<img src="https://github.com/unmtransinfo/cfde-distillery/blob/main/doc/UserGuide/images/1d.png?raw=true" width="750">
+<img src="https://github.com/unmtransinfo/cfde-distillery/blob/main/doc/UserGuide/images/1d.png?raw=true" width="100%">
 
