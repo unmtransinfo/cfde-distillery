@@ -10,7 +10,7 @@ RETURN * LIMIT 10
 Neo4j screenshot of query results:
 <img src="https://github.com/unmtransinfo/cfde-distillery/blob/main/doc/UserGuide/images/1a.png?raw=true" width="100%">
 
-Example 1b: Showing the results for disease terms containing the string “diabetes” and linked via the IDG-DrugCentral indication relationship:
+<strong>Example 1b:</strong> Showing the results for disease terms containing the string “diabetes” and linked via the IDG-DrugCentral indication relationship:
 
 ```cypher 
 MATCH (t1:Term)<-[:PREF_TERM]-(p1:Concept)-[:indication]-(c2:Concept)--(t2:Term) WHERE t1.name 
@@ -22,7 +22,7 @@ Neo4j screenshot of query results:
 
 <img src="https://github.com/unmtransinfo/cfde-distillery/blob/main/doc/UserGuide/images/1b.png?raw=true" width="100%">
 
-Example 1c: Listing compounds related to IDG terms containing the string “diabetes”:
+<strong>Example 1c:</strong> Listing compounds related to IDG terms containing the string “diabetes”:
 
 ```cypher 
 MATCH (c_term:Term)-[:PREF_TERM]-(c_concept:Concept)-[:indication {SAB: 'IDGD'}]-(d_concept:Concept)-[:PREF_TERM]-(d_term:Term)
@@ -35,7 +35,7 @@ Neo4j screenshot of query results:
 
 <img src="https://github.com/unmtransinfo/cfde-distillery/blob/main/doc/UserGuide/images/1c.png?raw=true" width="100%">
 
-Example 1d: Showing compounds and proteins (using SAB: IDG-P) related by bioactivity where the protein name contains the string “Cytochrome P450”:
+<strong>Example 1d:</strong> Showing compounds and proteins (using SAB: IDG-P) related by bioactivity where the protein name contains the string “Cytochrome P450”:
 
 ```cypher 
 MATCH (c_term:Term)-[:PREF_TERM]-(c_concept:Concept)-[:bioactivity {SAB: 'IDGP'}]-(p_concept:Concept)-[:PREF_TERM]-(p_term:Term)
