@@ -7,7 +7,8 @@ Example 1a: Showing the IDGD (IDG-Disease) mapping between PUBCHEM and SNOMEDUS_
 MATCH (pubchem_code:Code {SAB:'PUBCHEM'})-[:CODE]-(pubchem_cui:Concept)-[:indication {SAB:'IDGD'}]-(snomed_cui:Concept)-[:CODE]-(snomed_code:Code {SAB:"SNOMEDCT_US"})
 RETURN * LIMIT 10
 ```
-<img src="https://github.com/unmtransinfo/cfde-distillery/blob/main/doc/UserGuide/images/1a.png?raw=true" width="100%" align="center">
+Neo4j screenshot of query results:
+<img src="https://github.com/unmtransinfo/cfde-distillery/blob/main/doc/UserGuide/images/1a.png?raw=true" width="100%">
 
 Example 1b: Showing the results for disease terms containing the string “diabetes” and linked via the IDG-DrugCentral indication relationship:
 
@@ -16,6 +17,7 @@ MATCH (t1:Term)<-[:PREF_TERM]-(p1:Concept)-[:indication]-(c2:Concept)--(t2:Term)
 CONTAINS 'diabetes' 
 RETURN * ;
 ```
+Neo4j screenshot of query results:
 <img src="https://github.com/unmtransinfo/cfde-distillery/blob/main/doc/UserGuide/images/1b.png?raw=true" width="750">
 
 Example 1c: Listing compounds related to IDG terms containing the string “diabetes”:
@@ -26,7 +28,7 @@ WHERE d_term.name CONTAINS "diabetes"
 RETURN toLower(c_term.name) as Name
 ORDER BY Name
 ```
-
+Neo4j screenshot of query results:
 <img src="https://github.com/unmtransinfo/cfde-distillery/blob/main/doc/UserGuide/images/1c.png?raw=true" width="750">
 
 Example 1d: Showing compounds and proteins (using SAB: IDG-P) related by bioactivity where the protein name contains the string “Cytochrome P450”:
