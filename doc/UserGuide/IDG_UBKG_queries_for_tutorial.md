@@ -91,9 +91,45 @@ MATCH gr=(tissue_concept)-[r2:expressed_in {SAB:"GTEXEXP"}]-(gene_concept)-[r3 {
 WHERE gene_code.CodeID IN selectedGenes
 RETURN gr LIMIT 5
 ```
+
 Neo4j screenshot of query results:
 
 <img src="https://github.com/unmtransinfo/cfde-distillery/blob/main/doc/UserGuide/images/2b_2.png?raw=true" width="100%">
+
+<strong>Example 2c:</strong> Considering data from IDG-DrugCentral and LINCS, we next find all genes that are perturbed by compounds present in the LINCS dataset where those compounds are also linked to Parkinson's Disease. We take advantage of the “indication” relationship from DrugCentral to link the IDG-DrugCentral and LINCS datasets Below is the corresponding query:
+
+```cypher 
+MATCH (gene_concept:Concept)-[:CODE]->(gene_code:Code{SAB:'HGNC'})
+MATCH (snomed_concept:Concept)-[:CODE]-(snomed_code:Code {SAB:'SNOMEDCT_US'})-[:PT]-(snomed_term:Term)
+MATCH (pubchem_concept:Concept)-[:CODE]-(pubchem_code:Code {SAB:'PUBCHEM'})
+MATCH (gene_concept)-[r1 {SAB:'LINCS'}]-(pubchem_concept)-[r2:indication {SAB:'IDGD'}]-(snomed_concept)
+WHERE snomed_term.name="Parkinson's disease"
+RETURN * LIMIT 5
+```
+
+Neo4j screenshot of query results:
+
+<img src="https://github.com/unmtransinfo/cfde-distillery/blob/main/doc/UserGuide/images/2c.png?raw=true" width="100%">
+
+<strong>Example 2d:</strong> Find genes and compounds associated with the birth defect “Congenital diaphragmatic hernia”
+
+```cypher 
+WITH ['Congenital diaphragmatic hernia'] as birthDefects
+MATCH (hpo_concept:Concept)-[:CODE]-(hpo_code:Code {SAB:'HPO'})-[:PT]-(hpo_term:Term)
+MATCH (gene_concept:Concept)-[:CODE]->(gene_code:Code{SAB:'HGNC'})
+MATCH (pubchem_concept:Concept)-[:CODE]->(pubchem_code:Code {SAB:'PUBCHEM'})
+MATCH gr=(hpo_concept)-[r1:associated_with]-(gene_concept)-[r2 {SAB:'LINCS'}]-(pubchem_concept)
+WHERE hpo_term.name in birthDefects
+RETURN *
+LIMIT 10
+```
+
+Neo4j screenshot of query results:
+
+<img src="https://github.com/unmtransinfo/cfde-distillery/blob/main/doc/UserGuide/images/2d.png?raw=true" width="100%">
+
+
+
 
 
 
