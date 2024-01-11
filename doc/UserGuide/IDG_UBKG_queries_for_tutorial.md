@@ -180,9 +180,8 @@ RETURN distinct ub_term.name
 ```
 
 Neo4j screenshot of query results:
-<center>
+
 <img src="https://github.com/unmtransinfo/cfde-distillery/blob/main/doc/UserGuide/images/3c.png?raw=true" width="100%">
-</center>
 
 The above query returns several locations of human cells expressing ALOX5 including breast epithelium, Peyer's patch, and anterior lingual gland. These results are consistent with a literature search focused on human ALOX5 expression profiles.
 
