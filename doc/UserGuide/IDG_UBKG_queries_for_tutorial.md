@@ -163,7 +163,7 @@ Neo4j screenshot of query results:
 
 This query returns several of the six known human lipoxygenase genes along with Pubchem compounds associated via bioactivity. The resulting graph shows there are several compounds associated with two different ALOX isoforms. Specifically, ten compounds are associated with both ALOX15 and ALOX12, and one compound is associated with both ALOX15 and ALOX15B.
 
-<img src="https://github.com/unmtransinfo/cfde-distillery/blob/main/doc/UserGuide/images/3b_table.png?raw=true" width="100%">
+<img src="https://github.com/unmtransinfo/cfde-distillery/blob/main/doc/UserGuide/images/3b_table.png?raw=true" width="75%">
 
 Taking a closer look at one of the compounds associated with ALOX15B via bioactivity (PUBCHEM:1778842). The compound name is 3-[(4-Methylphenyl)methylsulfanyl]-1-phenyl-1,2,4-triazole. This compound, also known as “MLS000536924” was identified by Jameson II et al (2014) using high throughput screening as a competitive inhibitor (ki = 2.5+/-0.5 uM) of human epithelial 15-lipoxygenase-2 (ALOX15B). Several other compounds from the knowledge graph were manually investigated and found to be associated with Lipoxygenase activity in literature searches, supporting the results of our Cypher queries on UBKG.
 
