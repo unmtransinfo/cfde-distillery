@@ -27,9 +27,9 @@ The content is primarily intended for bioinformaticians, researchers in genomics
 
 The tutorial is structured into three main sections, each containing step-by-step examples:
 <ol>
-<li />**Introduction to IDG Queries within UBKG**: This section showcases how to map disease-related terms and compounds, using PUBCHEM and SNOMEDUS_CT as examples.
-<li />**IDG Use-Case Combining IDG, LINCS, and GTEx Datasets**: Here, you'll learn to identify gene expression patterns and the impact of compounds on specific genes, integrating data from various sources.
-<li />**Additional Use-Case Development**: Focused on the human ALOX genes and their role in asthma, this part dives into the specifics of querying genes and compounds related to inflammation and asthma.
+<li /><strong>Introduction to IDG Queries within UBKG</strong>strong>: This section showcases how to map disease-related terms and compounds, using PUBCHEM and SNOMEDUS_CT as examples.
+<li /><strong>IDG Use-Case Combining IDG, LINCS, and GTEx Datasets</strong>: Here, you'll learn to identify gene expression patterns and the impact of compounds on specific genes, integrating data from various sources.
+<li /><strong>Additional Use-Case Development</li></strong>: Focused on the human ALOX genes and their role in asthma, this part dives into the specifics of querying genes and compounds related to inflammation and asthma.
 </ol>
  
 ### Prerequisites
