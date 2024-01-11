@@ -1,5 +1,47 @@
 ### <ins>Illuminating the Druggable Genome (IDG)</ins>
 
+### Overview of the Illuminating the Druggable Genome (IDG) Tutorial
+
+## Introduction
+
+This tutorial provides a comprehensive guide to exploring the Illuminating the Druggable Genome (IDG) project using the Unified Biological Knowledge Graph (UBKG). The IDG program aims to enhance our understanding of the under-explored proteins in the druggable genome. By leveraging the vast data repository of UBKG, this tutorial demonstrates a series of Cypher query examples that allow users to unravel complex relationships between genes, diseases, and drugs.
+
+### What You Will Learn
+
+Through this tutorial, you will gain insights into:
+<ul>
+<li />Executing advanced queries in UBKG to map diseases and drugs.
+
+<li />Analyzing gene expression profiles and their association with diseases.
+
+<li />Exploring bioactivity relationships between compounds and proteins.
+
+<li />Integrating multi-dimensional data from diverse datasets like LINCS, GTEx, and DrugCentral.
+</ul>
+ 
+### Target Audience
+
+The content is primarily intended for bioinformaticians, researchers in genomics and pharmacology, and anyone interested in the intersection of big data and drug discovery.
+
+### Tutorial Structure
+
+The tutorial is structured into three main sections, each containing step-by-step examples:
+<ol>
+<li />**Introduction to IDG Queries within UBKG**: This section showcases how to map disease-related terms and compounds, using PUBCHEM and SNOMEDUS_CT as examples.
+<li />**IDG Use-Case Combining IDG, LINCS, and GTEx Datasets**: Here, you'll learn to identify gene expression patterns and the impact of compounds on specific genes, integrating data from various sources.
+<li />**Additional Use-Case Development**: Focused on the human ALOX genes and their role in asthma, this part dives into the specifics of querying genes and compounds related to inflammation and asthma.
+</ol>
+ 
+### Prerequisites
+
+To make the most of this tutorial, familiarity with Neo4j, Cypher Query Language, and a basic understanding of genomics is recommended. Each example is accompanied by a detailed query and visual results to aid comprehension.
+
+### Conclusion
+
+By the end of this tutorial, you will be equipped with the knowledge to effectively utilize UBKG for exploring the intricate network of genes, diseases, and drugs, contributing significantly to the fields of genomics and drug discovery.
+<br /><br />
+Let's get started!
+
 <strong>Example 1: Introduction to IDG queries within UBKG</strong><br /><br />
 <strong>Example 1a:</strong> Showing the IDGD (IDG-Disease) mapping between PUBCHEM and SNOMEDUS_CT:
 
