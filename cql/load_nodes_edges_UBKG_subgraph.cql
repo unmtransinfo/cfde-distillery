@@ -108,6 +108,20 @@ FOREACH (n IN TAIL(cnodes) | DETACH DELETE n);
 CREATE INDEX for (c:GO) on (c.CUI);
 
 ------------------------------------
+
+LOAD CSV WITH HEADERS FROM "file:///NCBI.tsv" AS row FIELDTERMINATOR '\t'
+CREATE (c:NCBI {CUI:trim(row.CUI), SAB:trim(row.SAB), node_code:trim(row.Code), node_label:trim(row.Label), value:trim(row.Value), lower_bound:trim(row.Lower_bound), upper_bound:trim(row.Upper_bound), unit:trim(row.Unit), node_synonyms:trim(row.Synonyms)});
+
+// delete duplicate node ids. It helps in loading edges quickly
+MATCH (c:NCBI)
+WITH c.CUI AS cui, COLLECT(c) AS cnodes
+WHERE SIZE(cnodes) > 1
+FOREACH (n IN TAIL(cnodes) | DETACH DELETE n);
+
+// create index for compound nodes on node_id. It helps in loading edges quickly
+CREATE INDEX for (c:NCBI) on (c.CUI);
+
+------------------------------------
 // Run the following CQL for all possible combinations of node labels. The following CQL uses Compound and Disease.
 :auto USING PERIODIC COMMIT 500
 LOAD CSV WITH HEADERS FROM "file:///edges_pk.tsv" AS row FIELDTERMINATOR '\t'
