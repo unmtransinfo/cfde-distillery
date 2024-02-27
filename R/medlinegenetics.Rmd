@@ -1,0 +1,31 @@
+---
+title: "MedlinePlus Genetics Condition-Gene Associations"
+output: html_document
+date: "2024-02-23"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r libraries}
+library(readr)
+library(data.table)
+```
+
+## MedlinePlus Genetics
+
+(Formerly Genetics Home Reference, http://ghr.nlm.nih.gov/)
+
+ * https://medlineplus.gov/about/developers/geneticsdatafilesapi/
+ * https://medlineplus.gov/download/ghr-summaries.xml
+
+```{r}
+ifile <- paste0(Sys.getenv("HOME"), sprintf("/../data/MedlinePlus/genetics/conditions_genes.tsv"))
+mlg <- read_delim(ifile, delim="\t", col_types = cols(.default = col_character()))
+setDT(mlg)
+names(mlg) <- c("condition_id", "condition_name", "ICD10_CM", "MeSH", "OMIM", "SNOMED_CT", "GTR", "genesymbol", "ghrpage")
+sprintf("Conditions: %d; genes: %d; associations: %d", mlg[, uniqueN(condition_id)], mlg[, uniqueN(genesymbol)], nrow(mlg[, .(condition_id, genesymbol)]))
+```
+
