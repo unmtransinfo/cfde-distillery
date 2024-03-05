@@ -1,0 +1,11 @@
+arguments:
+  inputs:
+    tcrd_inpfile: /home/praveen/Documents/work/cfde-distillery_data/compound_activity_input.tsv
+    dc_inpfile: /home/praveen/Documents/work/cfde-distillery_data/drug_disease_input.tsv
+    dbid_inpfile: /home/praveen/Documents/work/cfde-distillery_data/compound_name_drugbank_id.pkl
+  outputs:
+    p_nodes_file: /home/praveen/Documents/work/cfde-distillery_data/nodes_protein.tsv
+    c_nodes_file: /home/praveen/Documents/work/cfde-distillery_data/nodes_compound.tsv
+    d_nodes_file: /home/praveen/Documents/work/cfde-distillery_data/nodes_disease.tsv
+    cd_edge_file: /home/praveen/Documents/work/cfde-distillery_data/edges_indication_compound_disease.tsv
+    cp_edge_file: /home/praveen/Documents/work/cfde-distillery_data/edges_bioactivity_compound_protein.tsv

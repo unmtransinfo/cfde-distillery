@@ -1,6 +1,27 @@
-from DistilleryNodesEdges import DistilleryNodesEdges
+import argparse
+import yaml
+import sys
+
 import numpy as np
 import pandas as pd
+
+from DistilleryNodesEdges import DistilleryNodesEdges
+from Utils import parse_yml
+
+# global inputs, outputs
+ARGUMENTS = "arguments"
+INPUTS = "inputs"
+OUTPUTS = "outputs"
+
+TCRD_INPUT_FILE = "tcrd_inpfile"
+DC_INPUT_FILE = "dc_inpfile"
+DBID_INPUT_FILE = "dbid_inpfile"
+
+P_NODES_FILE = "p_nodes_file"
+C_NODES_FILE = "c_nodes_file"
+D_NODES_FILE = "d_nodes_file"
+CD_EDGE_FILE = "cd_edge_file"
+CP_EDGE_FILE = "cp_edge_file"
 
 
 def validate_nodes_edges_data(p_nodes_file, c_nodes_file, d_nodes_file, cd_edge_file, cp_edge_file):
@@ -49,21 +70,21 @@ def validate_nodes_edges_data(p_nodes_file, c_nodes_file, d_nodes_file, cd_edge_
     return MISSING_DATA
 
 
-def main():
+def main(inputs, outputs):
     """
     Call methods in DistilleryNodesEdges class to generate TSV files for nodes and edges
     """
     # inputs
-    tcrd_inpfile = "/home/praveen/Documents/work/cfde-distillery_data/compound_activity_input.tsv"
-    dc_inpfile = "/home/praveen/Documents/work/cfde-distillery_data/drug_disease_input.tsv"
-    dbid_inpfile = "/home/praveen/Documents/work/cfde-distillery_data/compound_name_drugbank_id.pkl"
+    tcrd_inpfile = inputs[TCRD_INPUT_FILE]
+    dc_inpfile = inputs[DC_INPUT_FILE]
+    dbid_inpfile = inputs[DBID_INPUT_FILE]
 
     # outputs
-    p_nodes_file = "/home/praveen/Documents/work/cfde-distillery_data/nodes_protein.tsv"
-    c_nodes_file = "/home/praveen/Documents/work/cfde-distillery_data/nodes_compound.tsv"
-    d_nodes_file = "/home/praveen/Documents/work/cfde-distillery_data/nodes_disease.tsv"
-    cd_edge_file = "/home/praveen/Documents/work/cfde-distillery_data/edges_indication_compound_disease.tsv"
-    cp_edge_file = "/home/praveen/Documents/work/cfde-distillery_data/edges_bioactivity_compound_protein.tsv"
+    p_nodes_file = outputs[P_NODES_FILE]
+    c_nodes_file = outputs[C_NODES_FILE]
+    d_nodes_file = outputs[D_NODES_FILE]
+    cd_edge_file = outputs[CD_EDGE_FILE]
+    cp_edge_file = outputs[CP_EDGE_FILE]
 
     # instantiate class
     dne = DistilleryNodesEdges(tcrd_ifile=tcrd_inpfile, dc_ifile=dc_inpfile, dbid_names_ifile=dbid_inpfile,
@@ -94,4 +115,15 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(description = "Provide file paths")
+    parser.add_argument("file_path", help= "Path to YAML file with arguments")
+    args = parser.parse_args()
+
+    arguments_file_path = args.file_path
+
+    values_yml = parse_yml(arguments_file_path)            
+
+    inputs = values_yml[ARGUMENTS][INPUTS]
+    outputs = values_yml[ARGUMENTS][OUTPUTS]
+
+    main(inputs, outputs)
