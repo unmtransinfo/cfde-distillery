@@ -1,3 +1,23 @@
+/*
+After the export of nodes and edges, the respective files need 
+to be copied to a directory and linked to docker container via
+volume
+
+Currently:
+
+docker run --rm --volume /home/www/htdocs/x/cfde/distillery/data/CKG/data:/usr/src/app/neo4j/data \ 
+--volume=/home/www/htdocs/x/cfde/distillery/data/CKG/import:/var/lib/neo4j/import \
+--publish=3000:7474 --publish=7687:7687 \
+--env NEO4J_PLUGINS='["apoc"]' \
+-d neo4j:5.16.0
+
+In this case, 
+/home/www/htdocs/x/cfde/distillery/data/CKG/data, and
+/home/www/htdocs/x/cfde/distillery/data/CKG/import are created, and the nodes
+and edges file is placed inside the import folder
+*/
+
+
 /* Query to capture all nodes according to the SAB required
  and export as file (nodes.tsv). Output also contains a 
  column called Node_label, which stores the node label 
