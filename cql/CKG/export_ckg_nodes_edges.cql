@@ -5,8 +5,9 @@ volume
 
 Currently:
 
-docker run --rm --volume /home/www/htdocs/x/cfde/distillery/data/CKG/data:/usr/src/app/neo4j/data \ 
+docker run --rm --volume /home/www/htdocs/x/cfde/distillery/data/CKG/data:/data \ 
 --volume=/home/www/htdocs/x/cfde/distillery/data/CKG/import:/var/lib/neo4j/import \
+--volume=/home/www/htdocs/x/cfde/distillery/data/CKG/conf:/var/lib/neo4j/conf \
 --publish=3000:7474 --publish=7687:7687 \
 --env NEO4J_PLUGINS='["apoc"]' \
 -d neo4j:5.16.0
