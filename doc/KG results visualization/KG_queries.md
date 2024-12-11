@@ -1,4 +1,4 @@
-1) Chronic Heart Failure in UBKG:
+### 1) Chronic Heart Failure in UBKG:
 
 MATCH (a:Concept )-[: CODE]->(b:Code{SAB:'HGNC'})
 MATCH (c:Concept )-[: CODE]-(d:Code {SAB:'SNOMEDCT_US'})-[:PT]-(e:Term)
@@ -19,7 +19,7 @@ Count: 38
 
 —-------------------------------------------------------------------------------------------------------------------------
 
-2) Cerebral infarction in UBKG:
+### 2) Cerebral infarction in UBKG:
 
 with ['cerebral infarction'] as disease
 match (hpo_concept:Concept)-[:CODE]-(hpo_code:Code )-[:PT]-(hpo_term:Term)
@@ -33,7 +33,7 @@ Count: 937144
 
 -—-------------------------------------------------------------------------------------------------------------------------
 
-3) Cerebral Ischemia in Condensed-KG:
+### 3) Cerebral Ischemia in Condensed-KG:
 
 match (c:Compound)-[r:indication]-(d:Disease)
 where d.node_label contains "Cerebral Ischemia"
@@ -43,7 +43,7 @@ Count: 3
 
 —-------------------------------------------------------------------------------------------------------------------------
 
-4) Diabetic retinopathy in UBKG:
+### 4) Diabetic retinopathy in UBKG:
 
 with ['Diabetic retinopathy'] as disease
 match (hpo_concept:Concept)-[:CODE]-(hpo_code:Code )-[:PT]-(hpo_term:Term)
@@ -68,7 +68,7 @@ Count: 384
 
 —------------------------------------------------------------------------------------------------------------------
 
-5) Pituitary structure in UBKG:
+### 5) Pituitary structure in UBKG:
 
 match (t:Term)-[:PT]-(c1:Code)-[r]-(c2:Concept)-[r2:expressed_in]-(c3:Concept
 )-[r3]-(c4:Code )
@@ -88,7 +88,7 @@ Count: 24
 
 —-------------------------------------------------------------------------------------------------------------------------
 
-6) Peptic Ulcer in UBKG:
+### 6) Peptic Ulcer in UBKG:
 
 with ["Peptic Ulcer"] as disease
 match (hpo_concept:Concept)-[:CODE]-(hpo_code:Code )-[:PT]-(hpo_term:Term)
@@ -111,7 +111,7 @@ Count: 27
 
 —-------------------------------------------------------------------------------------------------------------------------
 
-7) Hyperlipidemia in UBKG:
+### 7) Hyperlipidemia in UBKG:
 
 MATCH (a:Concept )-[: CODE]->(b:Code{SAB:'HGNC'})
 MATCH (c:Concept )-[: CODE]-(d:Code {SAB:'SNOMEDCT_US'})-[:PT]-(e:Term)
@@ -133,7 +133,7 @@ Count: 32
 
 —-----------------------------------------------------------------------------------------------------------------
 
-8) Hypophosphatemia in UBKG:
+### 8) Hypophosphatemia in UBKG:
 
 MATCH (a:Concept )-[: CODE]->(b:Code{SAB:'HGNC'})
 MATCH (c:Concept )-[: CODE]-(d:Code {SAB:'SNOMEDCT_US'})-[:PT]-(e:Term)
@@ -156,7 +156,7 @@ Count:10
 
 —-------------------------------------------------------------------------------------------------------------------------
 
-9) Neonatal pneumonia in UBKG:
+### 9) Neonatal pneumonia in UBKG:
 
 MATCH (a:Concept )-[: CODE]->(b:Code{SAB:'HGNC'})
 MATCH (c:Concept )-[: CODE]-(d:Code {SAB:'SNOMEDCT_US'})-[:PT]-(e:Term)
