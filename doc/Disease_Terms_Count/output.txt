@@ -1,0 +1,250 @@
+SEARCH STRING: C0000781
+UI: C0000781
+Name: Aborted Fetus (structure)
+Semantic Type: Embryonic Structure
+
+SEARCH STRING: C0001512
+UI: C0001512
+Name: Adhesive bandage
+Semantic Type: Medical Device
+
+SEARCH STRING: C0001527
+UI: C0001527
+Name: Adipose tissue
+Semantic Type: Tissue
+
+SEARCH STRING: C0001916
+UI: C0001916
+Name: Albinism
+Semantic Type: Disease or Syndrome
+
+SEARCH STRING: C0002503
+UI: C0002503
+Name: aminacrine
+Semantic Type: Organic Chemical
+
+SEARCH STRING: C0003166
+UI: C0003166
+Name: anthralin
+Semantic Type: Organic Chemical
+
+SEARCH STRING: C0003663
+UI: C0003663
+Name: Aquacobalamin
+Semantic Type: Organic Chemical
+
+SEARCH STRING: C0004717
+UI: C0004717
+Name: bambermycins
+Semantic Type: Organic Chemical
+
+SEARCH STRING: C0005496
+UI: C0005496
+Name: Biogenic Amines
+Semantic Type: Organic Chemical
+
+SEARCH STRING: C0005586
+UI: C0005586
+Name: Bipolar Disorder
+Semantic Type: Mental or Behavioral Dysfunction
+
+SEARCH STRING: C0006104
+UI: C0006104
+Name: Brain
+Semantic Type: Body Part, Organ, or Organ Component
+
+SEARCH STRING: C0006343
+UI: C0006343
+Name: Buddhist Religion
+Semantic Type: Idea or Concept
+
+SEARCH STRING: C0006635
+UI: C0006635
+Name: Cadmium poisoning
+Semantic Type: Injury or Poisoning
+
+SEARCH STRING: C0006646
+UI: C0006646
+Name: Organic mental disorder caused by caffeine
+Semantic Type: Mental or Behavioral Dysfunction
+
+SEARCH STRING: C0007047
+UI: C0007047
+Name: carboprost
+Semantic Type: Organic Chemical
+
+SEARCH STRING: C0007177
+UI: C0007177
+Name: Cardiac Tamponade
+Semantic Type: Disease or Syndrome
+
+SEARCH STRING: C0007277
+UI: C0007277
+Name: Carotid Body
+Semantic Type: Body Part, Organ, or Organ Component
+
+SEARCH STRING: C0008152
+UI: C0008152
+Name: Chlamydiaceae
+Semantic Type: Bacterium
+
+SEARCH STRING: C0008211
+UI: C0008211
+Name: Chlorisondamine
+Semantic Type: Organic Chemical
+
+SEARCH STRING: C0008292
+UI: C0008292
+Name: chlorquinaldol
+Semantic Type: Organic Chemical
+
+SEARCH STRING: C0008519
+UI: C0008519
+Name: Ectopic Tissue
+Semantic Type: Pathologic Function
+
+SEARCH STRING: C0008736
+UI: C0008736
+Name: chymopapain
+Semantic Type: Amino Acid, Peptide, or Protein
+
+SEARCH STRING: C0009206
+UI: C0009206
+Name: Cochliobolus
+Semantic Type: Fungus
+
+SEARCH STRING: C0010199
+UI: C0010199
+Name: Coturnix
+Semantic Type: Bird
+
+SEARCH STRING: C0010276
+UI: C0010276
+Name: Craniopharyngioma
+Semantic Type: Neoplastic Process
+
+SEARCH STRING: C0010511
+UI: C0010511
+Name: Cyanogen Bromide
+Semantic Type: Indicator, Reagent, or Diagnostic Aid
+
+SEARCH STRING: C0087042
+UI: C0087042
+Name: Urinary vesicostomy
+Semantic Type: Therapeutic or Preventive Procedure
+
+SEARCH STRING: C0011080
+UI: C0011080
+Name: Debridement of forehead lacerations
+Semantic Type: Therapeutic or Preventive Procedure
+
+SEARCH STRING: C0011369
+UI: C0011369
+Name: Dental hygienist (occupation)
+Semantic Type: Professional or Occupational Group
+
+SEARCH STRING: C0012050
+UI: C0012050
+Name: dibucaine
+Semantic Type: Organic Chemical
+
+SEARCH STRING: C0013076
+UI: C0013076
+Name: Dourine
+Semantic Type: Disease or Syndrome
+
+SEARCH STRING: C0013261
+UI: C0013261
+Name: Duane Retraction Syndrome
+Semantic Type: Disease or Syndrome
+
+SEARCH STRING: C0013360
+UI: C0013360
+Name: dyphylline
+Semantic Type: Organic Chemical
+
+SEARCH STRING: C0013804
+UI: C0013804
+Name: Electrocoagulation
+Semantic Type: Therapeutic or Preventive Procedure
+
+SEARCH STRING: C0013862
+UI: C0013862
+Name: Polyacrylamide Gel Electrophoresis
+Semantic Type: Laboratory Procedure
+
+SEARCH STRING: C0014048
+UI: C0014048
+Name: Encephalitis Virus, St. Louis
+Semantic Type: Virus
+
+SEARCH STRING: C0014070
+UI: C0014070
+Name: Encephalomyelitis
+Semantic Type: Disease or Syndrome
+
+SEARCH STRING: C0014390
+UI: C0014390
+Name: Entropion
+Semantic Type: Disease or Syndrome
+
+SEARCH STRING: C0014668
+UI: C0014668
+Name: Equine rhinitis B virus
+Semantic Type: Virus
+
+SEARCH STRING: C0014705
+UI: C0014705
+Name: Ergosterol
+Semantic Type: Organic Chemical
+
+SEARCH STRING: C0015031
+UI: C0015031
+Name: Ethnicity
+Semantic Type: Population Group
+
+SEARCH STRING: C0015058
+UI: C0015058
+Name: ethyl chloride
+Semantic Type: Organic Chemical
+
+SEARCH STRING: C0015520
+UI: C0015520
+Name: Factor Xa
+Semantic Type: Amino Acid, Peptide, or Protein
+
+SEARCH STRING: C0015582
+UI: C0015582
+Name: Family disruption
+Semantic Type: Finding
+
+SEARCH STRING: C0015656
+UI: C0015656
+Name: Fasciolopsiasis
+Semantic Type: Disease or Syndrome
+
+SEARCH STRING: C0015708
+UI: C0015708
+Name: Fazio-Londe Syndrome
+Semantic Type: Disease or Syndrome
+
+SEARCH STRING: C0016173
+UI: C0016173
+Name: Acquired fistula
+Semantic Type: Acquired Abnormality
+
+SEARCH STRING: C0016515
+UI: C0016515
+Name: Aphthovirus
+Semantic Type: Virus
+
+SEARCH STRING: C0016823
+UI: C0016823
+Name: Structure of fundus of eye
+Semantic Type: Body Part, Organ, or Organ Component
+
+SEARCH STRING: C0018051
+UI: C0018051
+Name: Gonadal Dysgenesis
+Semantic Type: Congenital Abnormality
+

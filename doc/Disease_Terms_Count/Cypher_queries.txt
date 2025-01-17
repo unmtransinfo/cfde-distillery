@@ -1,0 +1,13 @@
+# The query to find the total number of data present in disease node. 
+
+match(a:Disease)
+return count(a);
+
+count(a)
+358197
+
+
+# The query to get the input data for the python code that retrieves semantic types from UMLS.
+
+match(a:Disease)
+return a.CUI ;
