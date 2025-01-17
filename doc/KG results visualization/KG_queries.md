@@ -9,6 +9,9 @@ RETURN *;
 
 Count: 1298
 
+<img src="Chronic_Heart_Failure_DDKG.png" height="200">
+
+
 Chronic Heart Failure in Condensed-KG:
 
 MATCH (d:Disease )-[r:indication ]-(c:Compound )-[r1:bioactivity]-(b:Protein )-[r2]-(a:Gene)
@@ -16,6 +19,8 @@ WHERE d.node_label CONTAINS "Chronic heart failure"
 RETURN * ;
 
 Count: 38
+
+<img src="Chronic_Heart_Failure_Condensed_KG.png" height="200">
 
 —-------------------------------------------------------------------------------------------------------------------------
 
@@ -31,6 +36,8 @@ where hpo_term.name in disease Return * ;
 
 Count: 937144
 
+<img src="Cerebral_Infarction_DDKG.png" height="200">
+
 -—-------------------------------------------------------------------------------------------------------------------------
 
 ### 3) Cerebral Ischemia in Condensed-KG:
@@ -40,6 +47,8 @@ where d.node_label contains "Cerebral Ischemia"
 return *;
 
 Count: 3
+
+<img src="Cerebral_Ischemia_Condensed_KG.png" height="200">
 
 —-------------------------------------------------------------------------------------------------------------------------
 
@@ -56,6 +65,11 @@ limit 50;
 
 Count: 654
 
+<img src="Diabetic_Retinopathy_DDKG.png" height="200">
+
+
+
+
 Diabetic retinopathy in Condensed-KG:
 
 match (c:Compound)-[r1:indication]-(d:Disease)-[r2]-(p:Gene)
@@ -65,6 +79,8 @@ where d.node_label contains "Diabetic Retinopathy"
 return count(*)
 
 Count: 384
+
+<img src="Diabetic_Retinopathy_Condensed_KG.png" height="200">
 
 —------------------------------------------------------------------------------------------------------------------
 
@@ -77,6 +93,7 @@ return *;
 
 Count: 34964
 
+<img src="Pituitary_Structure_DDKG.png" height="200">
 
 Pituitary structure in Condensed-KG:
 
@@ -85,6 +102,8 @@ where d.node_label contains "Pituitary"
 return * ;
 
 Count: 24
+
+<img src="Pituitary_Structure_Condensed_KG.png" height="200">
 
 —-------------------------------------------------------------------------------------------------------------------------
 
@@ -100,6 +119,7 @@ Return count(*)
 
 Count: 9079195
 
+<img src="Peptic_Ulcer_UBKG.png" height="200">
 
 Peptic Ulcer in Condensed-KG:
 
@@ -108,6 +128,8 @@ where d.node_label contains "Peptic Ulcer"
 return count(*);
 
 Count: 27
+
+<img src="Peptic_Ulcer_Condensed_KG.png" height="200">
 
 —-------------------------------------------------------------------------------------------------------------------------
 
@@ -122,6 +144,7 @@ RETURN count(*)
 
 Count: 700
 
+<img src="Hyperlipidemia_DDKG.png" height="200">
 
 Hyperlipidemia in Condensed-KG:
 
@@ -130,6 +153,8 @@ where d.node_label contains "Hyperlipidemia"
 return count(*)
 
 Count: 32
+
+<img src="Hyperlipidemia_Condensed_KG.png" height="200">
 
 —-----------------------------------------------------------------------------------------------------------------
 
@@ -145,6 +170,7 @@ RETURN count(*)
 
 Count:100
 
+<img src="Hypophosphatemia_DDKG.png" height="200">
 
 Hypophosphatemia in Condensed-KG:
 
@@ -153,6 +179,8 @@ where d.node_label contains "Hypophosphatemia"
 return count(*)
 
 Count:10
+
+<img src="Hypophosphatemia_Condensed_KG.png" height="200">
 
 —-------------------------------------------------------------------------------------------------------------------------
 
@@ -167,6 +195,8 @@ RETURN *
 
 Count:198
 
+<img src="Neonatal_pneumonia_DDKG.png" height="200">
+
 
 Neonatal pneumonia in Condensed-KG:
 
@@ -175,5 +205,7 @@ where d.node_label contains "Neonatal pneumonia"
 return *
 
 Count:4
+
+<img src="Neonatal_pneumonia_Condensed_KG.png" height="200">
 
 —-------------------------------------------------------------------------------------------------------------------------
