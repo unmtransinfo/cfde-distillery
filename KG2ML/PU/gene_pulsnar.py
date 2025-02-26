@@ -344,7 +344,7 @@ def main():
     # get command line parameters
     parser = argparse.ArgumentParser()
     parser.add_argument("-inpfile", help="provide input file (outout of CQL)", required=True)
-    parser.add_argument("-gene_label_file", help="provide input file containing genes and their labels", required=True)
+    parser.add_argument("-gene_label_file", help="provide input file containing genes and their labels", required=True, default="inputData/gene_label_data.csv")
     parser.add_argument("-pltfile", help="provide filename to save bar plot", required=True)
     args = parser.parse_args()
 
