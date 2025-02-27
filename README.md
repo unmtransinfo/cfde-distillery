@@ -40,6 +40,16 @@ and enhance interpretability, specifically tailored to IDG use cases.
 
 <img src="doc/images/DDKG_to_CKG_workflow.png" height="180">
 
+## KG2ML
+
+The KG2ML module was developed
+to transform the KG into vector embeddings and an ML-ready dataset, designed
+to predict genes/proteins associated with a given disease/condition
+but lacking explicit links within the KG. Built upon our prior works in KG-based ML and
+positive-unlabeled (PU) learning, KG2ML estimates the proportion of genes/proteins 
+thereby associated indirectly with a disease/condition, providing well-calibrated
+predictions on the association between genes/proteins and a specified disease/condition.
+
 ## Links
 
  * [NIH-CFDE.org](https://www.nih-cfde.org/)
