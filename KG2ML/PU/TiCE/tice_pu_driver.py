@@ -83,7 +83,7 @@ def main():
     This code calls KM PU method to estimate alpha.
     """
     # local variables to save values
-    n_iterations = 5
+    n_iterations = 20
     alphas = []
 
     # get command line parameters
