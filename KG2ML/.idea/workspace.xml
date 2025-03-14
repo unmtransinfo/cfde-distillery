@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="35abd23e-1d13-4109-980a-46a0edc08f3e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/PU/TiCE/tice_pu_driver.py" beforeDir="false" afterPath="$PROJECT_DIR$/PU/TiCE/tice_pu_driver.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PU/pu_estimator.sh" beforeDir="false" afterPath="$PROJECT_DIR$/PU/pu_estimator.sh" afterDir="false" />
-    </list>
+    <list default="true" id="35abd23e-1d13-4109-980a-46a0edc08f3e" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
