@@ -38,7 +38,6 @@ predictions on the association between genes/proteins and a specified disease/co
 
 ## DDKG IDG Nodes and Edges files
 
-
 ### How to load data from TSV files to Neo4J KG
 
 - Download:
@@ -59,4 +58,5 @@ predictions on the association between genes/proteins and a specified disease/co
  * [CFDE_DataDistillery GitHub Repository](https://github.com/TaylorResearchLab/CFDE_DataDistillery)
  * [Poster: Illuminating the Druggable Genome (IDG) scientific use cases powered by the CFDE Data Distillery biomedical knowledge graph, integrating multiple Common Fund datasets](https://doi.org/10.5281/zenodo.10895777), Common Fund Data Ecosystem (CFDE) Meeting, Mar 19-20, 2024. 
  * [Downloads for Distillery-IDG](https://unmtid-dbs.net/download/cfde/distillery/)
+   * [Condensed KG dump-file](https://unmtid-dbs.net/download/cfde/distillery/DDKG-UNM-CondensedKG-subgraph.dump)
  * [Disease entities referenced in KG2ML](doc/Disease_entities_in_KG2ML.pdf)
