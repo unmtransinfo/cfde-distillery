@@ -1,0 +1,7 @@
+# I/O files
+input_data: "/mnt/bigHDD/work/CFDE_all/CFDE_data/KG2ML/diabetic_neuropathy.csv"   # output of CQL
+names_data: "/mnt/bigHDD/work/CFDE_all/CFDE_data/KG2ML/gene_label_data.csv"    # name for genes or other entities
+plot_file: "results/temp.png"    # file to save plot
+cl_performance_file: "kg2ml_results/classification_performance.tsv" # file to store PU predictions
+pu_prediction_file: "kg2ml_results/pu_predictions.tsv"  # file to store mean predicted probabilities for unlabeled by PU
+pu_feature_importance_file: "kg2ml_results/pu_feature_importance.tsv"
